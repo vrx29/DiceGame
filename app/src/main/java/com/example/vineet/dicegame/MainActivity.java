@@ -21,10 +21,23 @@ public class MainActivity extends AppCompatActivity {
 
         Button myButton = (Button) findViewById(R.id.roll_button);
 
+        final int[] diceArray = {R.drawable.dice1,
+                            R.drawable.dice2,
+                            R.drawable.dice3,
+                            R.drawable.dice4,
+                            R.drawable.dice5,
+                            R.drawable.dice6};
+
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Random randomNumberGenerator = new Random();
+
+                int number = randomNumberGenerator.nextInt(6);
+                leftDice.setImageResource(diceArray[number]);
+
+                number = randomNumberGenerator.nextInt(6);
+                rightDice.setImageResource(diceArray[number]);
 
             }
         });
